@@ -2,7 +2,7 @@ package Application.DSA;
 
 import java.util.stream.IntStream;
 
-public class LongestIncreasingSubarray {
+public class LongestIncreasingArray {
 
 
     public int longestIncreasingSubarray(int[] input) {
