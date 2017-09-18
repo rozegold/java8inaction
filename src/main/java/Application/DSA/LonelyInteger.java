@@ -9,7 +9,7 @@ public class LonelyInteger {
 
         int result=0;
 
-        Arrays.stream(input).
-        IntStream.range(0, input.length).map(i -> result^=input[i]);
+//        IntStream.range(0, input.length).map(i -> result^=input[i]);
+        return result;
     }
 }
