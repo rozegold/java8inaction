@@ -17,8 +17,8 @@ public class LongestIncreasingArrayTest {
 
 
     @Test
-    public void testLongestIncSubArray(){
-        assertEquals(4, subject.longestIncreasingSubarray(input));
+    public void testLongestIncArray(){
+        assertEquals(4, subject.longestIncreasingArray(input));
     }
 
 }

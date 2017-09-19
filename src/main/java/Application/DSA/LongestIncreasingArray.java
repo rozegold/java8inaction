@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 public class LongestIncreasingArray {
 
 
-    public int longestIncreasingSubarray(int[] input) {
+    public int longestIncreasingArray(int[] input) {
 
         if(null == input || 0 == input.length)
             return -1;
