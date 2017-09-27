@@ -1,34 +1,39 @@
 package Application.java8;
 
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /*Comparator to sort a list*/
 public class MyComparator {
 
-     List<Developer> sortListByLambdaByAge(List<Developer> devs) {
+    List<Developer> sortListByLambdaByAge(List<Developer> devs) {
 
         Comparator<Developer> comp = Comparator.comparingInt(Developer::getAge);
         devs.sort(comp);
-
         return devs;
     }
-    public List<Developer> sortListByLambdaByAgeReversed(List<Developer> devs) {
 
+    List<Developer> sortListByLambdaByAgeReversed(List<Developer> devs) {
+
+    /*         reversed used ReverseComparator wich calls compare method by passing compare(t2,t1) instead of
+    compare(t1,t2) to give reverse sorted result*/
         Comparator<Developer> comp = Comparator.comparingInt(Developer::getAge);
         devs.sort(comp.reversed());
 
         return devs;
     }
 
-     List<Developer> sortListByLambdaByName(List<Developer> devs) {
+    List<Developer> sortListByLambdaByName(List<Developer> devs) {
 
         devs.sort(Comparator.comparing(Developer::getName));
 
         return devs;
     }
 
-     List<Developer> sortListByLambdaBySalary(List<Developer> devs) {
+    List<Developer> sortListByLambdaBySalary(List<Developer> devs) {
 
         devs.sort((d1, d2) -> d1.getSalary().subtract(d2.getSalary()).intValue());
 
@@ -41,7 +46,7 @@ public class MyComparator {
         Collections.sort(devs, new Comparator<Developer>() {
             @Override
             public int compare(Developer o1, Developer o2) {
-                return o1.getAge()-o2.getAge();
+                return o1.getAge() - o2.getAge();
             }
         });
 
