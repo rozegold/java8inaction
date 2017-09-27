@@ -6,12 +6,33 @@ import java.util.*;
 /*Comparator to sort a list*/
 public class MyComparator {
 
+     List<Developer> sortListByLambdaByAge(List<Developer> devs) {
 
-   private boolean validateInputList(List<Developer> devs) {
-        if(null == devs || devs.isEmpty()){
-            return true;
-        }
-        return false;
+        Comparator<Developer> comp = Comparator.comparingInt(Developer::getAge);
+        devs.sort(comp);
+
+        return devs;
+    }
+    public List<Developer> sortListByLambdaByAgeReversed(List<Developer> devs) {
+
+        Comparator<Developer> comp = Comparator.comparingInt(Developer::getAge);
+        devs.sort(comp.reversed());
+
+        return devs;
+    }
+
+     List<Developer> sortListByLambdaByName(List<Developer> devs) {
+
+        devs.sort(Comparator.comparing(Developer::getName));
+
+        return devs;
+    }
+
+     List<Developer> sortListByLambdaBySalary(List<Developer> devs) {
+
+        devs.sort((d1, d2) -> d1.getSalary().subtract(d2.getSalary()).intValue());
+
+        return devs;
     }
 
     List<Developer> sortListByClassicComparatorByAge(List<Developer> devs) {
@@ -46,31 +67,19 @@ public class MyComparator {
         Collections.sort(devs, new Comparator<Developer>() {
             @Override
             public int compare(Developer o1, Developer o2) {
-                return o1.getSalary().subtract(o2.getSalary()).intValue();
+                return o1.getSalary().compareTo(o2.getSalary());
             }
         });
 
         return devs;
     }
 
-    public List<Developer> sortListByLambdaByAge(List<Developer> devs) {
-
-       devs.sort(Comparator.comparingInt(dev ->dev.getAge()));
-
-       return devs;
+    private boolean validateInputList(List<Developer> devs) {
+        if (null == devs || devs.isEmpty()) {
+            return true;
+        }
+        return false;
     }
 
-    public List<Developer> sortListByLambdaByName(List<Developer> devs) {
 
-        devs.sort(Comparator.comparing(dev -> dev.getName()));
-
-        return devs;
-    }
-
-    public List<Developer> sortListByLambdaBySalary(List<Developer> devs) {
-
-        devs.sort((d1, d2) -> d1.getSalary().subtract(d2.getSalary()).intValue());
-
-        return devs;
-    }
 }

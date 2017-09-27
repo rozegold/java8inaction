@@ -48,6 +48,12 @@ public class MyComparatorTest {
     }
 
     @Test
+    public void shouldSortListByLambdaByAgeReversed(){
+
+        assertEquals("b", subject.sortListByLambdaByAgeReversed(devs).get(0).getName());
+    }
+
+    @Test
     public void shouldSortListByLambdaByName(){
 
         assertEquals("a", subject.sortListByLambdaByName(devs).get(0).getName());
