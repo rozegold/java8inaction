@@ -27,4 +27,8 @@ public class TwoSum {
 
         return result;
     }
+
+    public void callHello(){
+        new LongestIncreasingSubArray().hello();
+    }
 }

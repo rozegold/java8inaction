@@ -1,5 +1,7 @@
 package Application.concurrency;
 
+import Application.DSA.LongestIncreasingSubArray;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
@@ -12,7 +14,12 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.StampedLock;
 import java.util.stream.IntStream;
 
-public class SynchronizationExamples {
+public class SynchronizationExamples extends LongestIncreasingSubArray{
+
+
+    public void callHello(){
+        new SynchronizationExamples().hello();
+    }
 
     private  int count=0;
     private ReentrantLock lock = new ReentrantLock();
@@ -215,4 +222,6 @@ public class SynchronizationExamples {
         }
 
     }
+
+
 }
