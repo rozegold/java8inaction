@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -64,6 +65,7 @@ public class MyComparatorTest {
 
         assertEquals("b", subject.sortListByLambdaBySalary(devs).get(0).getName());
     }
+
 
 
 }

@@ -1,10 +1,9 @@
 package Application.java8;
 
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /*Comparator to sort a list*/
 public class MyComparator {
@@ -85,6 +84,8 @@ public class MyComparator {
         }
         return false;
     }
+
+
 
 
 }
