@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class DoStuffTest {
 
     private DoStuff subject;
@@ -45,9 +43,15 @@ public class DoStuffTest {
     }
 
     @Test
-    public void groupStuff() throws Exception {
+    public void groupStuffByName() throws Exception {
 
-        subject.groupStuff(devs);
+        subject.groupStuffByName(devs);
+    }
+
+    @Test
+    public void groupStuffBySalary() throws Exception {
+
+        subject.groupStuffBySalary(devs);
     }
 
 }

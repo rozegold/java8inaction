@@ -1,8 +1,10 @@
 package Application.java8;
 
+import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -30,10 +32,30 @@ public class DoStuff {
         System.out.println(finalMap);
     }
 
-    void groupStuff(List<Developer> devs){
+    void groupStuffByName(List<Developer> devs){
 
         System.out.println("--group stuff--");
         System.out.println(devs.stream().collect(Collectors.groupingBy(Developer::getName,Collectors.counting())));
         System.out.println(devs.stream().collect(Collectors.groupingBy(Developer::getName,Collectors.summingInt(Developer::getAge))));
+    }
+
+
+    void groupStuffBySalary(List<Developer> devs){
+        System.out.println("--group stuff--");
+        Map<BigDecimal,List<Developer>> mapofList = devs.stream().collect(Collectors.groupingBy(Developer::getSalary));
+
+        mapofList.forEach((k,v) -> {
+            System.out.println(k);
+            v.stream().map(Developer::getName).forEach(System.out::println);
+        });
+
+
+       Map<BigDecimal, Set<String>> mapofSet = devs.stream().collect(Collectors.groupingBy(Developer::getSalary,Collectors.mapping(Developer::getName,Collectors.toSet())));
+
+       mapofSet.entrySet().stream().forEach(e -> {
+           System.out.println(e.getKey()+": "+e.getValue());
+       });
+
+
     }
 }
