@@ -16,7 +16,8 @@ public class FilterExamples {
 
     private void filterNullElements() {
 
-        List<String> list = Stream.of("java",null,"php","rxJava","erlang","mongodb",null,"nodejs",null,"spring").filter(Objects::nonNull).collect(Collectors.toList());
+        List<String> list = Stream.of("java",null,"php","rxJava","erlang","mongodb",null,"nodejs",null,"spring")
+                .filter(Objects::nonNull).collect(Collectors.toList());
 
         list.forEach(System.out::println);
 

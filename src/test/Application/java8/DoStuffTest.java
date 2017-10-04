@@ -1,5 +1,6 @@
 package Application.java8;
 
+import Application.customannotation.TesterInfo;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,6 +9,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@TesterInfo(
+        priority = TesterInfo.Priority.HIGH,
+        createdBy = "Sh",
+        lastModified = "29/09/2017"
+)
 public class DoStuffTest {
 
     private DoStuff subject;
